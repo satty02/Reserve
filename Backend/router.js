@@ -22,7 +22,6 @@ router.get('/state', async(req,res)=>{
         ]).toArray();
 
         const district = data.map(item=>item.district)
-
         res.json(district)
     }catch(err){
 
