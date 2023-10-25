@@ -30,57 +30,65 @@ function BusList() {
         <>
                 <ul className='absolute top-[192px] left-[318px] shadow-[10px_20px_4px_#000] w-[1043px] h-[114px] text-sm bg-white flex flex-col gap-3'>
                     {listOfBus.map((bus,index)=>(
-                        <li key={index} className=' bg-white flex flex-row'>
-                            <div>
-                                <div className="  text-5xl  font-medium ">
-                                    {bus.busName}
-                                </div>
-                                <div className=" h-[7.89%] w-[24.54%] top-[34.21%] left-[3.55%] text-2xs leading-[27.5px] font-light flex items-center">
-                                    {bus.category} | {38-bus && bus.SeatBooked ? bus.SeatBooked.length:0} seats left
-                                </div>
-                                <div className=" h-[7.89%] w-[3.55%] top-[15.79%] left-[26.17%] text-2xs leading-[27.5px] font-extralight flex items-center">
-                                    Ratings
+                        <li key={index} className=' bg-white flex flex-row h-full p-2 justify-between'>
+                            <div className='flex flex-col gap-[0.30rem] justify-between items-start ml'>
+                                {/* Bus Name and Ratings */}
+                                <div className='flex flex-row gap-4 items-center bg-blue-100 h-[20%] px-2'> 
+                                    <h2 className="font-medium ">
+                                        {bus.busName}
+                                    </h2>
+                                    <div>
+                                        <img placeholder='hello' className=" h-[20px] w-[20px]" alt="" src={star}/>
+                                    </div>
                                 </div>
                                 
-                                <div className=" h-[22.81%] w-[56.86%] top-[42.11%] left-[3.55%] text-xl leading-[27.5px] flex items-center">
-                                    {`${bus.startTime} ----------- ${bus.EndTime-bus.startTime} ----------- ${bus.EndTime} `}</div>
-                                <div className=" h-[14.04%] w-[19.67%] top-[63.16%] left-[3.55%] text-smi leading-[27.5px] text-gray flex items-center">
-                                    {bus.from}
+
+                                <div className=" text-2xs  font-light px-2">
+                                    {bus.category} | {38-bus && bus.SeatBooked ? bus.SeatBooked.length:0} seats left
                                 </div>
-                                <div className=" h-[14.04%] w-[19.27%] top-[64.91%] left-[41.71%] text-smi leading-[27.5px] text-gray flex items-center">
-                                    {bus.to}
-                                </div>
+                                
+                                
+                                    <div className="  text-xl  px-2">
+                                        {`${bus.startTime} ----------- ${bus.EndTime-bus.startTime} ----------- ${bus.EndTime} `}</div>
+                                    
+                                <div className='flex flex-row justify-between gap-4 px-2'>
+                                    <div className="  text-smi  text-gray ">
+                                        {bus.from}
+                                    </div>
+                                    <div className="  text-smi  text-gray ">
+                                        {bus.to}
+                                    </div>
+                                </div>                 
                                 {
-                                    bus && bus.animeties_list ? <ul className=' h-[10.53%] w-fit top-[80.7%] left-[3.55%] leading-[27.5px] text-mediumslateblue flex gap-4'>
+                                    bus && bus.animeties_list ? <ul className=' h-[10.53%] w-fit px-2  text-mediumslateblue flex gap-4'>
                                     {bus.animeties_list.map((list,index)=>(<li key={index}><a href={`/${list}`} className="">
                                     {list}
                                 </a></li>))}
                                 </ul> :
-                                <ul className=' h-[10.53%] w-fit top-[80.7%] left-[3.55%] leading-[27.5px] text-mediumslateblue flex gap-4'>
+                                <ul className=' h-[10.53%] w-fit px-2  text-mediumslateblue flex gap-4'>
                                     <li key={index}>loading</li>))
                                 </ul>
 
                                 } 
-                                <img className="absolute h-[24.56%] w-[2.68%] top-[5.26%] right-[74.05%] bottom-[70.18%] left-[23.27%] max-w-full overflow-hidden max-h-full" alt="" src={star}/>
-                                <div className="absolute h-[5.26%] w-[1.05%] top-[15.79%] left-[23.97%] text-7xs leading-[27.5px] font-light text-center flex items-center justify-center">
-                                    4.5
-                                </div>
+                                
+                                
                             </div>
                             
 
-                            <div className='absolute left-[80%] flex flex-row gap-8'>
-                                <div className=" h-[114px] w-[0.1%]  box-border border-r-[1px] border-solid border-black"/>
-                                <div className='flex flex-col'>
-                                    <div className=" w-full  text-mini leading-[27.5px] text-center inline-block">
+                            <div className=' flex flex-row  justify-evenly  w-[30%]'>
+                                <div className=" max-h-full w-[0.1%]  box-border border-r-[1px] border-solid border-black"/>
+                                <div className='flex flex-col justify-center items-center gap-2'>
+                                    <div className=" w-full  text-mini  text-center inline-block">
                                         Trip Cost
                                     </div>
-                                    <div className=" w-full  text-xl leading-[27.5px] text-center inline-block">
-                                        {bus.busFare}₹
-                                    </div>
-                                    <div className=" w-full  text-xs leading-[27.5px] font-light text-center inline-block">
+                                    <div className=" w-full  text-xs  font-light text-center inline-block">
                                         Starting From
                                     </div>
-                                    <button onClick={handleViewSeats} className=" h-full w-full  text-xs rounded-l-10xs leading-[27.5px] text-white text-center inline-block bg-orangered">
+                                    <div className=" w-full  text-xl  text-center inline-block">
+                                        {bus.busFare}₹
+                                    </div>
+                                    
+                                    <button onClick={handleViewSeats} className="  w-full  text-xs rounded-l-10xs  text-white text-center inline-block bg-orangered">
                                         View Seats
                                     </button>
                                 </div>
