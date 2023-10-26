@@ -3,6 +3,7 @@ import dateBar from '../assets/date_bar.png'
 import star from '../assets/star.svg'
 import Seats from './Seats';
 import axios from 'axios';
+import DatePicker from './APIcalls.js/DatePicker';
 
 function BusList() {
 
@@ -28,11 +29,12 @@ function BusList() {
 
     return (
         <>
-                <ul className='absolute top-[192px] left-[318px] shadow-[10px_20px_4px_#000] w-[1043px] h-[114px] text-sm bg-white flex flex-col gap-3'>
+                <ul className='absolute top-[192px] left-[318px] shadow-inherit w-[1043px] h-[114px] text-sm bg-white flex flex-col gap-3'>
                     {listOfBus.map((bus,index)=>(
-                        <li key={index} className=' bg-white flex flex-row h-full p-2 justify-between'>
+                        <li key={index} className=' bg-white flex flex-row h-full p-3 rounded-4xs justify-between'>
                             <div className='flex flex-col gap-[0.30rem] justify-between items-start ml'>
-                                {/* Bus Name and Ratings */}
+                                
+                                {/* Bus Name and Ratings */}    
                                 <div className='flex flex-row gap-4 items-center bg-blue-100 h-[20%] px-2'> 
                                     <h2 className="font-medium ">
                                         {bus.busName}
@@ -104,8 +106,7 @@ function BusList() {
 
             
                        
-            <img className="absolute top-[114px] left-[311px] w-[1050px] h-16 object-cover" alt=""
-                src={dateBar}/>
+            <DatePicker/>
 
             {viewSeats ?<Seats/> :null }
         </>

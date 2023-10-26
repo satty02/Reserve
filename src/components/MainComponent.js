@@ -11,6 +11,7 @@ import enter_bus from '../assets/enter_bus.jpg';
 import leaving_bus from '../assets/leaving_bus.png';
 import { SelectDistrictFromAction } from '../state/Action/SelectDistrictFromAction';
 import { SelectDistrictToAction } from '../state/Action/SelectDistrictToAction';
+import { SelectDateAction } from '../state/Action/SelectDateAction';
 
 const MainComponent = () => {
 
@@ -20,7 +21,6 @@ const MainComponent = () => {
     const selectDistrictFrom = useSelector(state=>state.selectDistrictFrom);
     const selectDistrictTo = useSelector(state=>state.selectDistrictTo);
 
-    const [viewSearch, setViewSearch] = useState(false);
     const [searchValue1, setSearchValue1] = useState('');
     const [searchValue2, setSearchValue2] = useState('');
     
@@ -30,7 +30,7 @@ const MainComponent = () => {
     const filteredSearch1 = districtList.filter((dist)=>dist.toLowerCase().slice(0,searchValue1.length) === searchValue1.toLowerCase()) || [];
     const filteredSearch2 = districtList.filter((dist)=>dist.toLowerCase().slice(0,searchValue2.length) === searchValue2.toLowerCase()) || [];
 
-    const [date, setDate] = useState('')
+    const date = useSelector(state=>state.selectDate)
 
     const getData = async()=>{
         await axios
@@ -72,7 +72,7 @@ const MainComponent = () => {
     }
 
     const handleDateChange = (e)=>{
-        setDate(e.target.value)
+        dispatch(SelectDateAction(e.target.value))
     }
     
     const handleViewSearch = async()=>{
