@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import dateBar from '../assets/date_bar.png'
 import star from '../assets/star.svg'
 import Seats from './Seats';
 import axios from 'axios';
@@ -106,7 +105,7 @@ function BusList() {
 
             
                        
-            <DatePicker/>
+           <DatePicker/>
 
             {viewSeats ?<Seats/> :null }
         </>

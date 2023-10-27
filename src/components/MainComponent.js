@@ -73,28 +73,32 @@ const MainComponent = () => {
 
     const handleDateChange = (e)=>{
         dispatch(SelectDateAction(e.target.value))
+        console.log(e.target.value)
     }
+
     
     const handleViewSearch = async()=>{
 
         setLoading(true);
 
-        const searchData = {
-            from : selectDistrictFrom,
-            to:selectDistrictTo,
-            date:date,
-        } || {};
+        // const searchData = {
+        //     from : selectDistrictFrom,
+        //     to:selectDistrictTo,
+        //     date:date,
+        // } || {};
 
-        await axios
-        .post("http://localhost:8080/trips",searchData)
-        .then((res) => {
-        console.log(res.data);
+        // await axios
+        // .post("http://localhost:8080/trips",searchData)
+        // .then((res) => {
+        // console.log(res.data);
+        // navigate('/search')
+
+        // })
+        // .catch((err) => {
+        // console.log(err);
+        // })
         navigate('/search')
 
-        })
-        .catch((err) => {
-        console.log(err);
-        })
         
     }
 
