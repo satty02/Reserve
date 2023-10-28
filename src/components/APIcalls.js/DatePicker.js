@@ -64,7 +64,10 @@ return (
         {dates.map((date,index) => (
           <div key={date} className="text-center py-1 ">
             <button className={`${selectedDate===date ? 'bg-green-700':null} w-18 h-18 bg-blue-600 p-2 rounded-[50%] text-white`} onClick={handleClickDate} value={date}>
-              {dates1[index]}
+              <div>
+                <p>{dates1[index]}</p>
+                <p></p>
+              </div>
             </button>
           </div>
         ))}
