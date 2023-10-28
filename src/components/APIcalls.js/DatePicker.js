@@ -19,13 +19,11 @@ const DatePicker = () => {
   const previousDate1 = new Date(currentDate);
   previousDate1.setDate(currentDate.getDate()-2);
 
-
   const nextDate = new Date(currentDate);
   nextDate.setDate(currentDate.getDate()+1);
 
   const nextDate1 = new Date(currentDate);
   nextDate1.setDate(currentDate.getDate()+2);
-
 
   const [findDates, setFindDates] = useState([
     previousDate1,
@@ -35,8 +33,8 @@ const DatePicker = () => {
     nextDate1,
   ])
 
-  const dates = findDates.map((date)=>date.toLocaleDateString())
-
+  const dates = findDates.map((date)=>date.toLocaleDateString());
+  const dates1 = findDates.map((date)=>date.getDate());
 
 
   const handleClickPrev = ()=>{
@@ -56,23 +54,21 @@ const DatePicker = () => {
   }
 
   const handleClickDate = (e)=>{
-    // console.log(e.target.value)
     dispatch(SelectDateAction(e.target.value))
   };
-console.log(selectedDate)
-
 
 return (
+
     <div className=" mt-4 p-4 absolute top-[103px] left-[370px] w-[900px] rounded-4xs h-8 object-cover flex flex-row gap-8 justify-evenly items-center bg-white">
-        <button onClick={handleClickPrev} className='w-20 h-5'><img className='w-[15px] h-[15px]' src={prev} alt='prev'/></button>
-        {dates.map((date) => (
+        <button onClick={handleClickPrev} className='w-[25px] h-[25px] rounded-[50px]'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={prev} alt='prev'/></button>
+        {dates.map((date,index) => (
           <div key={date} className="text-center py-1 ">
-            <button className={`${selectedDate===date ? 'bg-green-700':null} bg-blue-600 p-2 rounded-4xs text-white`} onClick={handleClickDate} value={date}>
-              {date}
+            <button className={`${selectedDate===date ? 'bg-green-700':null} w-18 h-18 bg-blue-600 p-2 rounded-[50%] text-white`} onClick={handleClickDate} value={date}>
+              {dates1[index]}
             </button>
           </div>
         ))}
-        <button onClick={handleClickNext} className='w-20 h-5'><img className='w-[15px] h-[15px]' src={next} alt='next'/></button>
+        <button onClick={handleClickNext} className='w-[25px] h-[25px] rounded-[50%]'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={next} alt='next'/></button>
     </div>
   );
 };
