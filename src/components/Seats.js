@@ -4,6 +4,8 @@ const Seats = () => {
 
     const [selectSeat , setSelectSeat] = useState(false);
 
+    const noColumn = 7
+
     const handleClickSeats = () =>{
         setSelectSeat(!selectSeat);
     }   
@@ -28,163 +30,81 @@ const Seats = () => {
 
             {/* Seats */}
 
-            <div className="absolute top-[333px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[504px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[560px] bg-lightcoral shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[333px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
+            {/* upper row1 */}
 
-            <div className="absolute top-[458px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[504px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[458px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-
-            <div className="absolute top-[357px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[504px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[357px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-
-            <div className="absolute top-[482px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[504px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[482px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+            <div className="absolute top-[333px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]  grid grid-cols-7 gap-2" >
+                {
+                    Array.from({length:noColumn}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex rounded-4xs">
+                            <button onClick={handleClickSeats} className={`h-full w-full ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
             
-            <div className="absolute top-[413px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+            
+                {/* lower row-1 */}
+            <div className="absolute top-[458px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
+                {
+                    Array.from({length:noColumn}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex rounded-4xs">
+                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="absolute top-[413px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[413px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[413px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
-            <div className="absolute top-[413px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
+            
 
-            <div className="absolute top-[538px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {/* upper row-2 */}
+            <div className="absolute top-[357px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
+            {
+                    Array.from({length:noColumn}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex">
+                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="absolute top-[538px] left-[616px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+            
+            {/* lower row-2 */}
+            <div className="absolute top-[482px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
+            {
+                    Array.from({length:noColumn}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex">
+                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="absolute top-[538px] left-[672px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+            
+            {/* upper row-3 */}
+            <div className="absolute top-[413px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
+            {
+                    Array.from({length:5}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex">
+                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="absolute top-[538px] left-[728px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
+            
+                {/* lower row-3 */}
+            <div className="absolute top-[538px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
+            {
+                    Array.from({length:5}).map((_,index)=>(
+                        <div key={index} className=" w-[49px] h-[18px] flex">
+                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
+                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="absolute top-[538px] left-[784px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[49px] h-[18px]">
-                <button onClick={handleClickSeats} className={`absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                <div className="absolute top-[2px] left-[41px] rounded-12xs bg-white w-[5px] h-3.5"/>
-            </div>
+            
             
             {/* Filter seats */}
             <div className="absolute h-[1.66%] w-[6.88%] top-[32.13%] left-[21.57%] text-mini font-medium inline-block">
