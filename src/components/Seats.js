@@ -1,14 +1,56 @@
 import { useState } from "react";
 
 const Seats = () => {
+    const [ur1, setUr1] = useState(new Array(7).fill(false));
+    const [ur2, setUr2] = useState(new Array(7).fill(false));
+    const [ur3, setUr3] = useState(new Array(5).fill(false));
+    const [lr1, setLr1] = useState(new Array(7).fill(false));
+    const [lr2, setLr2] = useState(new Array(7).fill(false));
+    const [lr3, setLr3] = useState(new Array(5).fill(false));
 
-    const [selectSeat , setSelectSeat] = useState(false);
+    const handleClickSeats = (e) => {
+        const seatValue = e.target.value;
+        const name = e.target.name;
+        
+        if (name === "ur1") {
+            setUr1((prevUr1) => {
+                const updatedUr1 = [...prevUr1];
+                updatedUr1[seatValue] = !updatedUr1[seatValue];
+                return updatedUr1;
+            });
+        } else if (name === "ur2") {
+            setUr2((prevUr2) => {
+                const updatedUr2 = [...prevUr2];
+                updatedUr2[seatValue] = !updatedUr2[seatValue];
+                return updatedUr2;
+            });
+        } else if (name === "ur3") {
+            setUr3((prevUr3) => {
+                const updatedUr3 = [...prevUr3];
+                updatedUr3[seatValue] = !updatedUr3[seatValue];
+                return updatedUr3;
+            });
+        } else if (name === "lr1") {
+            setLr1((prevLr1) => {
+                const updatedLr1 = [...prevLr1];
+                updatedLr1[seatValue] = !updatedLr1[seatValue];
+                return updatedLr1;
+            });
+        } else if (name === "lr2") {
+            setLr2((prevLr2) => {
+                const updatedLr2 = [...prevLr2];
+                updatedLr2[seatValue] = !updatedLr2[seatValue];
+                return updatedLr2;
+            });
+        } else if (name === "lr3") {
+            setLr3((prevLr3) => {
+                const updatedLr3 = [...prevLr3];
+                updatedLr3[seatValue] = !updatedLr3[seatValue];
+                return updatedLr3;
+            });
+        }
+    };
 
-    const noColumn = 7
-
-    const handleClickSeats = () =>{
-        setSelectSeat(!selectSeat);
-    }   
 
     return (
         <>
@@ -33,76 +75,94 @@ const Seats = () => {
             {/* upper row1 */}
 
             <div className="absolute top-[333px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]  grid grid-cols-7 gap-2" >
-                {
-                    Array.from({length:noColumn}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex rounded-4xs">
-                            <button onClick={handleClickSeats} className={`h-full w-full ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {ur1.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="ur1"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
             
                 {/* lower row-1 */}
             <div className="absolute top-[458px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
-                {
-                    Array.from({length:noColumn}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex rounded-4xs">
-                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {lr1.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="lr1"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
 
                 {/* upper row-2 */}
             <div className="absolute top-[357px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
-            {
-                    Array.from({length:noColumn}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex">
-                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {ur2.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="ur2"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
             {/* lower row-2 */}
             <div className="absolute top-[482px] left-[448px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
-            {
-                    Array.from({length:noColumn}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex">
-                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {lr2.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="lr2"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
             {/* upper row-3 */}
             <div className="absolute top-[413px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
-            {
-                    Array.from({length:5}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex">
-                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {ur3.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="ur3"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
                 {/* lower row-3 */}
             <div className="absolute top-[538px] left-[560px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] grid grid-cols-7 gap-2">
-            {
-                    Array.from({length:5}).map((_,index)=>(
-                        <div key={index} className=" w-[49px] h-[18px] flex">
-                            <button onClick={handleClickSeats} className={`h-full w-full  rounded-sm ${selectSeat?'bg-lightcoral':'bg-gray-300'}`}></button>
-                            <div className="absolute ml-10 top-[0.13rem] rounded-12xs bg-white w-[5px] h-3.5"/>
+                {lr3.map((isSelected, index) => (
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <button
+                                onClick={handleClickSeats}
+                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                name="lr3"
+                                value={index}
+                            ></button>
+                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
-                    ))
-                }
+                    ))}
             </div>
             
             

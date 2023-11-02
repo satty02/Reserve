@@ -20,7 +20,6 @@ function BusList() {
     const handleViewSeats = ()=>{
         setViewSeats(!viewSeats);
     }
-    console.log(listOfBus)
 
     useEffect(()=>{
         getData()
