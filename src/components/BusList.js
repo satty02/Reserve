@@ -3,10 +3,14 @@ import star from '../assets/star.svg'
 import Seats from './Seats';
 import axios from 'axios';
 import DatePicker from './APIcalls.js/DatePicker';
+import { useDispatch, useSelector } from 'react-redux';
+import viewSeatsAction from '../state/Action/ViewSeatsAction'
 
 function BusList() {
 
-    const [viewSeats, setViewSeats] = useState(false);
+    const dispatch = useDispatch();
+
+    const viewSeats = useSelector(state=>state.viewSeats)
 
     const [listOfBus, setListOfBus] = useState([]);
 
@@ -18,7 +22,7 @@ function BusList() {
     }
 
     const handleViewSeats = ()=>{
-        setViewSeats(!viewSeats);
+        dispatch(viewSeatsAction(!viewSeats));
     }
 
     useEffect(()=>{
@@ -27,9 +31,15 @@ function BusList() {
 
     return (
         <>
-                <ul className='absolute top-[192px] left-[318px] shadow-inherit w-[1043px] h-[114px] text-sm bg-white flex flex-col gap-3'>
+            
+                <ul className={`relative top-[192px] left-[20.5%] shadow-inherit w-[1043px] h-[114px] text-sm bg-white flex flex-col gap-3 ${
+          viewSeats ? 'blur-background' : ''
+        }`}>
                     {listOfBus.map((bus,index)=>(
-                        <li key={index} className=' bg-white flex flex-row h-full p-3 rounded-4xs justify-between'>
+                        <>
+                        <li key={index} className={`bg-white flex flex-row h-full p-3 rounded-4xs justify-between ${
+          viewSeats ? 'blur-background' : ''
+        }`}>
                             <div className='flex flex-col gap-[0.30rem] justify-between items-start ml'>
                                 
                                 {/* Bus Name and Ratings */}    
@@ -66,7 +76,7 @@ function BusList() {
                                 </a></li>))}
                                 </ul> :
                                 <ul className=' h-[10.53%] w-fit px-2  text-mediumslateblue flex gap-4'>
-                                    <li key={index}>loading</li>))
+                                    <li key={index}>loading</li>
                                 </ul>
 
                                 } 
@@ -92,21 +102,19 @@ function BusList() {
                                         View Seats
                                     </button>
                                 </div>
-                                
-                            </div>
-                            
-
-                            
-                            
+                            </div>                            
                         </li>
+                    </>
                     ))}
+
                 </ul>
 
             
                        
            <DatePicker/>
+        
+        {viewSeats ?<Seats/> :null }
 
-            {viewSeats ?<Seats/> :null }
         </>
     )
 }
