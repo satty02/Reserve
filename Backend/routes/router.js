@@ -32,13 +32,12 @@ router.get('/state', async(req,res)=>{
 router.post('/trips' , async (req,res)=>{
 
     try{
-        // {date,from,to,busOwnerId,startTime,EndTime,category,seatBooked,bus_no,animeties_list,busFare,busName}
         const tripData = req.body;
         console.log(tripData)
-        const db = await main();
-        const collection = db.collection('trips');
-        const insertTrips = await collection.insertOne(tripData);
-        res.json(insertTrips);
+        // const db = await main();
+        // const collection = db.collection('trips');
+        // const insertTrips = await collection.insertOne(tripData);
+        res.json('quries');
 
     }catch(err){
         console.error(err)
@@ -50,7 +49,7 @@ router.post('/trips' , async (req,res)=>{
 router.get('/trips' , async (req,res)=>{
     try{
         const db = await main();
-        const collection = db.collection('trips');
+        const collection = db.collection('bus_owner');
         const data = (await collection.find({}).toArray()).slice(0,50);
         res.json(data);
     }catch(err){

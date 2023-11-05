@@ -89,16 +89,16 @@ const MainComponent = () => {
 
         console.log(searchData)
 
-        // await axios
-        // .post("http://localhost:8080/trips",searchData)
-        // .then((res) => {
-        // console.log(res.data);
-        // navigate('/search')
+        await axios
+        .post("http://localhost:8080/trips",searchData)
+        .then((res) => {
+        console.log(res.data);
+        navigate('/search')
 
-        // })
-        // .catch((err) => {
-        // console.log(err);
-        // })
+        })
+        .catch((err) => {
+        console.log(err);
+        })
         navigate('/search')
 
         
