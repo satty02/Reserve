@@ -81,11 +81,13 @@ const MainComponent = () => {
 
         setLoading(true);
 
-        // const searchData = {
-        //     from : selectDistrictFrom,
-        //     to:selectDistrictTo,
-        //     date:date,
-        // } || {};
+        const searchData = {
+            from : selectDistrictFrom,
+            to:selectDistrictTo,
+            date:date,
+        } || {};
+
+        console.log(searchData)
 
         // await axios
         // .post("http://localhost:8080/trips",searchData)
@@ -109,36 +111,36 @@ const MainComponent = () => {
 
     return (
         <>
-        <div className="bg-gray-500 w-full h-[1024px]  text-left text-xl text-black font-roboto ">
+        <div className="bg-slate-400 w-full h-[1024px]  text-left text-xl text-black font-roboto ">
             <Header/>
             {/* Search button */}
             
                 <button onClick={handleViewSearch} name='search'  className={`${loading?'cursor-wait':'cursor-pointer'} z-50 hover:bg-orange-400 absolute left-[650px] top-[280px] bg-red px-10 py-4 text-sm rounded-4xs bg-orangered`}>Search</button>
+            
                 <div className="absolute top-[142px] left-[267px] w-[292px] h-24">
-                    <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-4xs bg-white">
+                    <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-4xs bg-white shadow-lg shadow-black">
                         <img src={enter_bus}  alt='entering in the bus' className='w-10 h-10 absolute top-7 left-1'/>
-                        <input id='from' className='w-[230px] h-10 absolute top-[40%] left-[50px] ring-1 rounded-4xs' onChange={handleChangeSearch1} value={selectDistrictFrom}/>
-                        <label htmlFor='from' className='absolute top-4 left-[60px] text-sm font-light'>from:</label>
+                        <input id='from' className='w-[230px] h-10 absolute top-[40%] left-[50px] ring-1 ring-blue-600 rounded-4xs shadow-inner shadow-black' onChange={handleChangeSearch1} value={selectDistrictFrom} placeholder='Enter the Pickup Point'/>
+                        <label htmlFor='from' className='absolute top-4 left-[60px] text-mini font-light'>From:</label>
                     </div>
-                    <ul  className='w-full  z-50 overflow-y-auto max-h-44 absolute top-[80%] right-[0%] flex flex-col gap-1 mt-[23px] text-center rounded-4xs'>
-                        {searchValue1 ? filteredSearch1.map((district,index)=><li className='bg-white' key={index}><button onClick={handleSelect1} className={`hover:bg-blue-600  ${loading?'bg-white text-black':null} hover:text-white w-full h-full bg-inherit`} value={district}>{district}</button></li>) : null}
+                    <ul  className='w-full scrollbar-thin scrollbar-thumb-blue-500 scrollbar-corner-neutral-400 scrollbar-track-blue-100 absolute overflow-y-auto max-h-44  top-[80%] right-[0%] flex flex-col gap-2 mt-[23px] text-center '>
+                        {searchValue1 ? filteredSearch1.map((district,index)=><li className='bg-slate-200' key={index}><button onClick={handleSelect1} className={`hover:bg-blue-600  ${loading?'bg-white text-black':null} hover:text-white w-full  bg-white shadow-lg shadow-black`} value={district}>{district}</button></li>) : null}
                     </ul>
                 </div>
+
                 <div className="absolute top-[142px] left-[574px] w-[292px] h-24">
-                    <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-4xs bg-white">
+                    <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-4xs bg-white shadow-lg shadow-black">
                         <img src={leaving_bus}  alt='leaving from the bus' className='w-10 h-10 absolute top-7 left-1'/>   
-                        <input id='to' className='w-[230px] h-10 absolute top-[40%] left-[50px] rounded-4xs ring-1' onChange={handleChangeSearch2} value={selectDistrictTo}/>
+                        <input id='to' className='w-[230px] h-10 absolute top-[40%] left-[50px] rounded-4xs ring-1 ring-blue-600 shadow-inner shadow-black' onChange={handleChangeSearch2} value={selectDistrictTo} placeholder='Enter the Drop Point'/>
                         <label htmlFor='to' className='absolute top-4 left-[60px] text-sm font-light'>to:</label>
                     </div>
-                    <ul className='w-full overflow-y-auto max-h-44 absolute z-50 top-[80%] right-[0%] flex flex-col gap-1 mt-[23px] text-center rounded-4xs'>
-                        {searchValue2 ? filteredSearch2.map((district,index)=><li className='bg-white' key={index}><button onClick={handleSelect2} className={`hover:bg-blue-600  ${loading?'bg-white text-black':null} hover:text-white w-full h-full bg-inherit`} value={district}>{district}</button></li>) : null}
+                    <ul className='w-full scrollbar-thin scrollbar-thumb-blue-500 scrollbar-corner-neutral-400 scrollbar-track-blue-100 overflow-y-auto max-h-44 absolute z-50 top-[80%] right-[0%] flex flex-col gap-1 mt-[23px] text-center'>
+                        {searchValue2 ? filteredSearch2.map((district,index)=><li className='bg-slate-200' key={index}><button onClick={handleSelect2} className={`hover:bg-blue-600  ${loading?'bg-white text-black':null} hover:text-white w-full h-full bg-white shadow-lg shadow-black`} value={district}>{district}</button></li>) : null}
                     </ul>
                 </div>
-                <div className="absolute top-[142px] left-[881px] w-[292px] h-24">
-                    <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-4xs bg-white">
-                        <input onChange={handleDateChange}  id="date" className='w-[230px] h-10 absolute top-[40%] left-[32px] rounded-4xs ring-1' type='date' value={date}/>
+                <div className="absolute top-[142px] left-[881px] w-[292px] h-24 bg-white rounded-4xs shadow-lg shadow-black">
+                        <input onChange={handleDateChange}  id="date" className='w-[230px] h-10 absolute top-[40%] left-[32px] text-gray-700 focus:ring-blue-500 rounded-4xs ring-1 shadow-inner shadow-black' type='date' value={date}/>
                         <label htmlFor='date' className='absolute top-4 left-[40px] text-sm font-light'>Date:</label>
-                    </div>
                 </div>
 
 

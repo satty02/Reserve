@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Payments from "./Payments";
 
 const Seats = () => {
     const [ur1, setUr1] = useState(new Array(7).fill(false));
@@ -11,7 +12,7 @@ const Seats = () => {
     const handleClickSeats = (e) => {
         const seatValue = e.target.value;
         const name = e.target.name;
-        
+        console.log('hello')
         if (name === "ur1") {
             setUr1((prevUr1) => {
                 const updatedUr1 = [...prevUr1];
@@ -53,11 +54,10 @@ const Seats = () => {
 
 
     return (
-        <div className="relative left-[20%] top-[16%] shadow-2xl bg-gainsboro w-[1043px] h-[242px] p-3">
+        <div className="relative left-[20%] top-[16%] shadow-2xl shadow-black bg-gainsboro w-[1043px] h-[242px] p-3">
            
            {/* seat layuts */}
-            <div className="absolute top-[2%] left-[10%] w-[429px] h-[106px] p-2">
-                <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-white shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"/>
+            <div className="absolute top-[2%] left-[10%] w-[429px] h-[106px] p-2 bg-white rounded-4xs shadow-inner shadow-black">
                 <div className="absolute h-[16.04%] w-[16.08%] top-[82.08%] left-[2.1%] inline-block [transform:_rotate(-90deg)] [transform-origin:0_0]">
                     Upper Berth
                 </div>
@@ -65,14 +65,14 @@ const Seats = () => {
                 {/* upper row1 */}
                 <div className="absolute top-[8%] left-[11%] grid grid-cols-7 gap-2" >
                 {ur1.map((isSelected, index) => (
-                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                        <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs shadow-md shadow-black`}>
                             <button
                                 onClick={handleClickSeats}
-                                className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                className={`shadow-md shadow-slate-700 border-y-gray-50 h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                 name="ur1"
                                 value={index}
                             ></button>
-                            <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                            <div className="absolute shadow-md shadow-black ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                         </div>
                     ))}
                 </div>
@@ -80,36 +80,35 @@ const Seats = () => {
                 {/* upper row-2 */}
                 <div className="absolute top-[32%] left-[11%]  grid grid-cols-7 gap-2">
                     {ur2.map((isSelected, index) => (
-                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <div key={index} className={`w-[49px] shadow-md shadow-black h-[18px] flex rounded-4xs`}>
                                 <button
                                     onClick={handleClickSeats}
-                                    className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                    className={`shadow-md shadow-slate-700 border-y-gray-50 h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                     name="ur2"
                                     value={index}
                                 ></button>
-                                <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                                <div className="shadow-sm shadow-black absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                             </div>
                         ))}
                 </div>
 
                 {/* upper row-3 */}
-                <div className="absolute top-[80%] left-[162px]  grid grid-cols-5 gap-2">
+                <div className="absolute top-[75%] left-[162px]  grid grid-cols-5 gap-2 ">
                     {ur3.map((isSelected, index) => (
-                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs shadow-sm shadow-black`}>
                                 <button
                                     onClick={handleClickSeats}
-                                    className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                    className={`h-full w-full shadow-md shadow-slate-700 border-y-gray-50 ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                     name="ur3"
                                     value={index}
                                 ></button>
-                                <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                                <div className="absolute ml-10 shadow-sm shadow-black top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                             </div>
                         ))}
                 </div>
             </div>
 
-            <div className="absolute top-[52%] left-[10%] w-[429px] h-[106px] p-2">
-                <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-white shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"/>
+            <div className="absolute top-[52%] left-[10%] w-[429px] h-[106px] p-2 bg-white rounded-4xs shadow-inner shadow-black">
                 <div className="absolute h-[16.04%] w-[16.08%] top-[82.08%] left-[2.1%] inline-block [transform:_rotate(-90deg)] [transform-origin:0_0]">
                     Lower Berth
                 </div>
@@ -117,14 +116,14 @@ const Seats = () => {
                 {/* lower row-1 */}
                 <div className="absolute top-[8%] left-[11%]  grid grid-cols-7 gap-2">
                     {lr1.map((isSelected, index) => (
-                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs shadow-md shadow-black`}>
                                 <button
                                     onClick={handleClickSeats}
-                                    className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                    className={`h-full w-full shadow-slate-700 border-y-gray-50 ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                     name="lr1"
                                     value={index}
                                 ></button>
-                                <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                                <div className="absolute ml-10 shadow-sm shadow-black top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                             </div>
                         ))}
                 </div>
@@ -132,36 +131,36 @@ const Seats = () => {
                 {/* lower row-2 */}
                 <div className="absolute top-[32%] left-[11%]  grid grid-cols-7 gap-2">
                     {lr2.map((isSelected, index) => (
-                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs shadow-md shadow-black`}>
                                 <button
                                     onClick={handleClickSeats}
-                                    className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                    className={`h-full w-full shadow-slate-700 border-y-gray-50 ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                     name="lr2"
                                     value={index}
                                 ></button>
-                                <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                                <div className="absolute ml-10 shadow-sm shadow-black top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                             </div>
                         ))}
                 </div>
 
                     {/* lower row-3 */}
-                <div className="absolute top-[80%] left-[162px]  grid grid-cols-5 gap-2">
+                <div className="absolute top-[75%] left-[162px]  grid grid-cols-5 gap-2">
                     {lr3.map((isSelected, index) => (
-                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs`}>
+                            <div key={index} className={`w-[49px] h-[18px] flex rounded-4xs shadow-sm shadow-black`}>
                                 <button
                                     onClick={handleClickSeats}
-                                    className={`h-full w-full ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
+                                    className={`h-full w-full shadow-md shadow-slate-700 border-y-gray-50 ${isSelected ? 'bg-lightcoral' : 'bg-gray-300'}`}
                                     name="lr3"
                                     value={index}
                                 ></button>
-                                <div className="absolute ml-10 top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
+                                <div className="absolute ml-10 shadow-sm shadow-black top-[0.12rem] rounded-12xs bg-white w-[5px] h-3.5" />
                             </div>
                         ))}
                 </div>
             </div>
             
             {/* Filter seats */}
-            <div className="absolute h-[1.66%] w-[7.88%] top-[4%] left-[1%] text-m font-medium inline-block">
+            <div className="absolute h-[1.66%] w-full top-[4%] left-[1%] text-m font-medium inline-block">
                 Select Seats
             </div>
 
@@ -207,7 +206,7 @@ const Seats = () => {
             {/* Selections details */}
 
             <div className="absolute top-[6%] left-[53.5%] bg-white w-[241px] h-[229px] shadow-2xl">
-                <div className=" absolute h-full w-full top-[2%] left-[5%] text-base font-medium ">Boarding & Dropping</div>
+                <div className=" absolute h-full w-full top-[2%] text-base text-center font-medium ">Boarding & Dropping</div>
                 <div className="absolute h-[1.66%] w-full top-[25%] left-[10%] text-mini inline-block">
                     Mumbai
                 </div>
@@ -242,22 +241,7 @@ const Seats = () => {
             
             {/* Proceed to payments */}
 
-            <div className="absolute top-[90px] left-[825px] rounded-[5px] bg-white w-[229px] h-[78px] shadow-2xl">
-                <div className="absolute h-[1.66%] w-full top-[10%] left-[10%] text-base font-medium inline-block">
-                    Fare Details
-                </div>
-                <div className="absolute h-[1.66%] w-[7.64%] top-[5%] left-[70%] font-medium text-gray-100 inline-block">
-                    Amount
-                </div>
-                <div className="absolute h-[1.66%] w-full top-[44%] left-[5%] text-[8px] font-medium text-black inline-block">
-                    Taxes will Be Calculated during Payments</div>
-                <div className="absolute h-[1.66%] w-full top-[37%] left-[30%] text-base font-medium text-center inline-block">
-                    ₹ 750.00
-                </div>
-                <button className="absolute  top-[70%] rounded-4xs left-[25%] text-2xs font-medium bg-orangered text-white text-center flex items-center justify-center">
-                    Proceed to Book
-                </button>
-            </div>
+            <Payments/>
         </div>
     );
 };

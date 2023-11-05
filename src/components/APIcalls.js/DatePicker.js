@@ -6,7 +6,6 @@ import prev from '../../assets/prev.png';
 import next from '../../assets/next.png';
 import { SelectDateAction } from '../../state/Action/SelectDateAction';
 
-
 const DatePicker = () => {
   const dispatch = useDispatch()
 
@@ -63,17 +62,17 @@ const DatePicker = () => {
 
 return (
 
-    <div className=" mt-4 p-4 absolute top-[103px] left-[370px] w-[900px] rounded-4xs h-8 object-cover flex flex-row  justify-evenly items-center bg-white">
-        <button onClick={handleClickPrev} className='w-[25px] h-[25px] rounded-[50px] mr-3'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={prev} alt='prev'/></button>
+    <div className="shadow-black shadow-inner  mt-4 p-4 absolute top-[103px] left-[370px] w-[900px] rounded-4xs h-8 object-cover flex flex-row  justify-evenly items-center bg-white">
+        <button onClick={handleClickPrev} className='w-[25px] h-[25px] rounded-[50%] shadow-lg shadow-black mr-3'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={prev} alt='prev'/></button>
         {dates.map((date,index) => (
-          <div key={date} className="text-center mt-0 flex flex-col  justify-center border-solid w-[200px] items-center bg-gray-400">
-            <button className={`${currentDate.toLocaleDateString()===date ? 'bg-green-700':null} w-[60px] text-[25px]  h-[60px] bg-blue-600 p-2 rounded-[50%] text-white`} onClick={handleClickDate} value={date}>
+          <div key={date} className="text-center mt-0 flex flex-col shadow-inner shadow-black justify-center  w-[200px] items-center bg-gray-400">
+            <button className={`${currentDate.toLocaleDateString()===date ? 'bg-green-700':null} w-[60px] text-[25px]  h-[60px] bg-blue-600 p-2 rounded-[50%] shadow-lg shadow-black text-white`} onClick={handleClickDate} value={date}>
                 {dates1[index]}
             </button>
             <p className='mt-[-18px] text-[9px] text-white'>{(new Intl.DateTimeFormat('en-US',options).format(new Date(date)).slice(0,3))}</p>  
           </div>
         ))}
-        <button onClick={handleClickNext} className='w-[25px] h-[25px] rounded-[50%] ml-3'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={next} alt='next'/></button>
+        <button onClick={handleClickNext} className='w-[25px] h-[25px] rounded-[50%] ml-3 shadow-lg shadow-black'><img className='w-[25px] h-[25px] ml-[-7.5px] mt-[-3px]' src={next} alt='next'/></button>
     </div>
   );
 };

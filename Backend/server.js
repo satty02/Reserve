@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json())
 
 main();
-app.use('/' , require('./router'));
+app.use('/' , require('./routes/router'));
+app.use('/',require('./routes/stripeRoute'));
 
 app.listen(port,()=>{console.log(`server is listening on port ${port}`)})

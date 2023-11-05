@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png'
 import profile from '../assets/profile.png'
+import logo2 from '../assets/log2.png'
 
 function Header() {
 
@@ -11,12 +12,11 @@ function Header() {
           {/* Logo */}
           <div className="absolute top-[0px] left-[0px] w-full h-[108px]">
                 <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] bg-white shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"/>
-                <img className="absolute top-[23px] left-[0px] w-[485px] h-[77px] object-cover" alt=""
-                    src={logo}/>
+                <img className="absolute top-[23px] left-[0px] w-[485px] h-[77px] object-cover" alt="" src={logo2}/>
             </div>
             {/* Buttons */}
-            <button className="absolute top-[35px] left-[689px] w-[126px] h-[54px] rounded-xl text-xl">Contact us</button>
-            <button className="absolute top-[35px] left-[512px] w-[126px] h-[54px] rounded-xl text-xl">Ticket</button>
+            <button className="absolute top-[35px] left-[689px] w-[126px] h-[54px] rounded-xl text-xl shadow-lg shadow-black">Contact us</button>
+            <button className="absolute top-[35px] left-[512px] w-[126px] h-[54px] rounded-xl text-xl shadow-lg shadow-black">Ticket</button>
             {
               login ?
             <>

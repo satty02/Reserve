@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const main = require('./connector');
+const main = require('../connector');
 
 
 // get request for fetching districts
