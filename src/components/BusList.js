@@ -13,8 +13,6 @@ function BusList() {
     const viewSeats = useSelector((state) => state.viewSeats);
     const [listOfBus, setListOfBus] = useState([]);
     const startDate = useSelector((state)=>state.selectDate);
-    console.log(startDate);
-    console.log(journeyHours)
 
     var originalDate = new Date(startDate);
 
@@ -28,10 +26,11 @@ function BusList() {
 
         const endDate =  journeyHours.map((hrs,index)=>{
                 
-                const date = startDate+'T'+hrs
+                const date = startDate+'T'+time[index]
+
                             // Original date and time
                 const originalDate = new Date(date);
-                const timeToAdd = journeyHours[index];
+                const timeToAdd = hrs;
 
                 // Extract hours and minutes from the timeToAdd
                 const [hoursToAdd, minutesToAdd] = timeToAdd.split(':').map(Number);
@@ -53,21 +52,15 @@ function BusList() {
                 return formattedDate
         });
 
-        console.log(endDate)
-
-
-    
-
-        console.log(endDate)
 
     // getting the data from trips collection
     const getData = async () => {
         const response = await axios.get('http://localhost:8080/trips');
-        console.log(response.data)
         setListOfBus(response.data);
     }
 
     const handleViewSeats = () => {
+        console.log(viewSeats)
         dispatch(viewSeatsAction(!viewSeats));
     }
 
