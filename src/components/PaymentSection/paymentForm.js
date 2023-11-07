@@ -1,4 +1,5 @@
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -18,6 +19,11 @@ function PaymentForm() {
       if (error) {
         console.error(error);
       } else {
+
+        const data = {paymentMethod}
+
+        await axios.post('http://localhost:8080/bookings',"data");
+
         // Handle successful payment here
         console.log(paymentMethod);
         Navigate('/bookings');

@@ -1,5 +1,5 @@
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "../FrontPage/Footer";
+import Header from "../FrontPage/Header";
 import FilterSection from "./FilterSection";
 import BusList from "./BusList";
 

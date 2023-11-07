@@ -1,8 +1,8 @@
-import BookingConfirmation from "./components/BookingConfirmation";
-import MainComponent from "./components/MainComponent";
-import SearchedPage from "./components/SearchedPage";
+import BookingConfirmation from "./components/PaymentSection/BookingConfirmation";
+import MainComponent from "./components/FrontPage/MainComponent";
+import SearchedPage from "./components/SearchedPage/SearchedPage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Seats from "./components/Seats";
+import Seats from "./components/SearchedPage/Seats";
 
 function App() {
   return (
