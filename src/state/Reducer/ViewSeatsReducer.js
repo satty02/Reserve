@@ -10,4 +10,4 @@ export const ViewSeatsReducer = (state=INIT_STATE, action)=>{
             default:
                 return state;
     }
-}
+};

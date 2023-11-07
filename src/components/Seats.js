@@ -54,7 +54,7 @@ const Seats = () => {
 
 
     return (
-        <div className="relative left-[20%] top-[16%] shadow-2xl shadow-black bg-gainsboro w-[1043px] h-[242px] p-3">
+        <div className="relative left-[20%] top-[0%] shadow-2xl shadow-black bg-gainsboro w-[1043px] h-[242px] p-3">
            
            {/* seat layuts */}
             <div className="absolute top-[2%] left-[10%] w-[429px] h-[106px] p-2 bg-white rounded-4xs shadow-inner shadow-black">

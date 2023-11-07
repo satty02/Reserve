@@ -10,22 +10,19 @@ const journeyHours = require('./scripts/RandomHours');
 
 function BusList() {
     const dispatch = useDispatch();
-    const viewSeats = useSelector((state) => state.viewSeats);
+    let viewSeats = useSelector((state) => state.viewSeats);
     const [listOfBus, setListOfBus] = useState([]);
     const startDate = useSelector((state)=>state.selectDate);
 
+    const from = useSelector(state=>state.selectDistrictFrom)
+    const to = useSelector(state=>state.selectDistrictTo)
+ 
     var originalDate = new Date(startDate);
 
     var options = { day: '2-digit', month: 'short' };
     var formattedDate = originalDate.toLocaleDateString('en-US', options);
 
-    const handleRootClick = () => {
-             dispatch(viewSeatsAction(false));
-        }
-
-
-        const endDate =  journeyHours.map((hrs,index)=>{
-                
+                const endDate =  journeyHours.map((hrs,index)=>{        
                 const date = startDate+'T'+time[index]
 
                             // Original date and time
@@ -58,26 +55,35 @@ function BusList() {
         const response = await axios.get('http://localhost:8080/trips');
         setListOfBus(response.data);
     }
-
     const handleViewSeats = () => {
-        console.log(viewSeats)
         dispatch(viewSeatsAction(!viewSeats));
     }
 
     useEffect(() => {
-        getData();
-
-        document.addEventListener('click', handleRootClick);
-
+        getData()
+    
+        const handleClickOutside = (event) => {
+            console.log("Click event detected");
+    
+            if (viewSeats) {
+                console.log("View Seats is true");
+                // Check if the click target is not inside the "Seats" component
+                if (event.target && !event.target.closest(".seats-container")) {
+                    console.log("Click is outside Seats");
+                    dispatch(viewSeatsAction(false));
+                }
+            }
+        };
+    
+        document.addEventListener("click", handleClickOutside);
+    
         return () => {
-            document.removeEventListener('click', handleRootClick);
-        }
-
-    }, [])
-
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [viewSeats, dispatch]);
     return (
-        <div onClick={handleRootClick}>
-            <ul className={`relative overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-950 scrollbar-track-gray-300  top-[192px] left-[20.5%] shadow-inherit w-[1043px]  text-sm bg-inherit flex flex-col gap-3 ${
+        <div className=''>
+            <ul className={`relative seats-container overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-950 scrollbar-track-gray-300  top-[192px] left-[20.5%] shadow-inherit w-[1043px]  text-sm bg-inherit flex flex-col gap-3 ${
                 viewSeats ? 'blur-background' : ''
             }`}>
                 {listOfBus.map((bus, index) => (
@@ -105,12 +111,12 @@ function BusList() {
                                 <div className="  text-xl  px-2">
                                     {`${formattedDate}, ${time[index]} ----------- ${journeyHours[index]} hours ----------- ${endDate[index]} `}</div>
 
-                                <div className='flex flex-row justify-between gap-4 px-2'>
+                                <div className='flex flex-row justify-between gap-[330PX] px-2 text-gray-950'>
                                     <div className="  text-smi  text-gray ">
-                                        {bus.from}
+                                        {from}
                                     </div>
                                     <div className="  text-smi  text-gray ">
-                                        {bus.to}
+                                        {to}
                                     </div>
                                 </div>
                                 {
@@ -152,7 +158,7 @@ function BusList() {
 
             <DatePicker />
 
-            <div>
+            <div className=''>
                 {viewSeats && <Seats />}
             </div>
         </div>
