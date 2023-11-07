@@ -1,8 +1,8 @@
 import React from 'react'
-import ig1 from '../assets/ig.png'
-import twitter from '../assets/twitter.jpg';
-import fb from '../assets/fb.png'
-import logo2 from '../assets/logo.png'
+import ig1 from '../../assets/ig.png'
+import twitter from '../../assets/twitter.jpg';
+import fb from '../../assets/fb.png'
+import logo2 from '../../assets/logo.png'
 
 function Footer() {
   return (

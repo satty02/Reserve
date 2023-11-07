@@ -1,5 +1,5 @@
-import bus_p from '../assets/bus_p.png'
-import cust from '../assets/cust.webp'
+import bus_p from '../../assets/bus_p.png'
+import cust from '../../assets/cust.webp'
 import Header from './Header';
 import Footer from './Footer';
 import { useEffect, useState } from 'react';
@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { DistrictListAction } from '../../state/Action/DistrictListAction';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import enter_bus from '../assets/enter_bus.jpg';
-import leaving_bus from '../assets/leaving_bus.png';
+import enter_bus from '../../assets/enter_bus.jpg';
+import leaving_bus from '../../assets/leaving_bus.png';
 import { SelectDistrictFromAction } from '../../state/Action/SelectDistrictFromAction';
 import { SelectDistrictToAction } from '../../state/Action/SelectDistrictToAction';
 import { SelectDateAction } from '../../state/Action/SelectDateAction';

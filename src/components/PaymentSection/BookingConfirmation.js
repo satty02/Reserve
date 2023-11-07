@@ -1,6 +1,6 @@
 import Footer from "../FrontPage/Footer";
 import Header from "../FrontPage/Header";
-import greenTick from '../assets/green_tick.jpg'
+import greenTick from '../../assets/green_tick.jpg'
 
 const BookingConfirmation = () => {
     return (

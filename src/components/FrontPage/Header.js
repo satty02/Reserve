@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../assets/logo.png'
-import profile from '../assets/profile.png'
-import logo2 from '../assets/log2.png'
+import profile from '../../assets/profile.png'
+import logo2 from '../../assets/log2.png'
 
 function Header() {
 

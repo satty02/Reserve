@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import star from '../assets/star.svg';
+import star from '../../assets/star.svg';
 import Seats from './Seats';
 import axios from 'axios';
 import DatePicker from './DatePicker';
